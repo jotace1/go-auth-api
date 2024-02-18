@@ -1,0 +1,4 @@
+mocks
+.env
+coverage.out
+tmp
