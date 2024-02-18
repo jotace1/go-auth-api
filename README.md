@@ -4,8 +4,8 @@
  <a href="#tech">Technologies</a> • 
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
- <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a>
+  <a href="#unit_tests">Unit Tests</a> •
+ 
 </p>
 
 <p align="center">
@@ -23,15 +23,11 @@
 
 <h3>Prerequisites</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
-
 - [GoLang](https://go.dev/)
 - [Docker](https://www.docker.com/)
 - [Mockery](https://vektra.github.io/mockery/latest/)
 
 <h3>Cloning</h3>
-
-How to clone your project
 
 ```bash
 git clone https://github.com/jotace1/go-auth-api
@@ -51,8 +47,6 @@ DB_NAME={DB_NAME}
 
 <h3>Starting</h3>
 
-How to start your project
-
 ```bash
 cd go-auth-api
 mockery --all
@@ -61,8 +55,6 @@ docker-compose up
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-Here you can list the main routes of your API, and what are their expected request bodies.
-​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
 | <kbd>POST /account</kbd>     | creates an user account see [response details](#post-auth-account)
@@ -117,4 +109,13 @@ Here you can list the main routes of your API, and what are their expected reque
 **RESPONSE**
 ```json
 "You are authenticated"
+```
+
+
+<h2 id="unit_tests">🩺 Unit tests</h2>
+
+This application is covered by unit tests in the handlers and usecases layers, to run the tests you just need to:
+
+```bash
+go test ./... -coverprofile coverage.out
 ```
