@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"os"
 
@@ -31,7 +30,6 @@ func AuthMiddleware(c *fiber.Ctx) error {
 	if formattedTokenWithoutBearer == "" {
 		err := errors.New("you must provide a token in the Authorization header")
 		res.BuildError(err, http.StatusUnauthorized)
-		fmt.Println(res.StatusCode, res.Data)
 		c.Status(res.StatusCode).JSON(res.Data)
 		return nil
 	}
