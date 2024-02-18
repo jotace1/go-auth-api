@@ -1,11 +1,11 @@
 <h1 align="center" style="font-weight: bold;">Go Auth API 💻</h1>
 
 <p align="center">
- <a href="#tech">Technologies</a> • 
- <a href="#started">Getting Started</a> • 
+ <a href="#tech">Technologies</a> •
+ <a href="#started">Getting Started</a> •
   <a href="#routes">API Endpoints</a> •
   <a href="#unit_tests">Unit Tests</a> •
- 
+
 </p>
 
 <p align="center">
@@ -55,15 +55,16 @@ docker-compose up
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-| route               | description                                          
-|----------------------|-----------------------------------------------------
-| <kbd>POST /account</kbd>     | creates an user account see [response details](#post-auth-account)
-| <kbd>POST /account/login</kbd>     | authenticate user into the api see [request details](#post-auth-login)
-| <kbd>POST /auth/test</kbd>     | test route to check if token is valid see [request details](#post-auth-route)
+| route                          | description                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------- |
+| <kbd>POST /account</kbd>       | creates an user account see [request details](#post-auth-account)            |
+| <kbd>POST /account/login</kbd> | authenticate user into the api see [request details](#post-auth-login)       |
+| <kbd>GET /auth/test</kbd>      | test route to check if token is valid see [request details](#get-auth-route) |
 
 <h3 id="post-auth-account">POST /account</h3>
 
 **REQUEST**
+
 ```json
 {
   "username": "Joao",
@@ -72,8 +73,8 @@ docker-compose up
 }
 ```
 
-
 **RESPONSE**
+
 ```json
 {
   "account_id": "5a37d698-78e1-470e-8eb7-94c5aa802b8e",
@@ -85,6 +86,7 @@ docker-compose up
 <h3 id="post-auth-login">POST /account/login</h3>
 
 **REQUEST**
+
 ```json
 {
   "email": "joao123@email.com",
@@ -93,24 +95,26 @@ docker-compose up
 ```
 
 **RESPONSE**
+
 ```json
 {
   "token": "OwoMRHsaQwyAgVoc3OXmL1JhMVUYXGGBbCTK0GBgiYitwQwjf0gVoBmkbuyy0pSi"
 }
 ```
 
-<h3 id="post-auth-route">POST /auth/test</h3>
+<h3 id="get-auth-route">POST /auth/test</h3>
 
 **REQUEST HEADER**
+
 ```json
 "Authorization": "Bearer OwoMRHsaQwyAgVoc3OXmL1JhMVUYXGGBbCTK0GBgiYitwQwjf0gVoBmkbuyy0pSi"
 ```
 
 **RESPONSE**
+
 ```json
 "You are authenticated"
 ```
-
 
 <h2 id="unit_tests">🩺 Unit tests</h2>
 
